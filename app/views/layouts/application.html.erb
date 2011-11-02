@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kyle Swarner Dot Com</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+                <h1>Kyle Swarner Dot Com</h1>
+            </div>
+            <nav>
+                <%= link_to_unless_current("Home", {:action => "home"}) do %>
+                    <div id="current">Home</div>
+                <% end %> |
+                <%= link_to_unless_current("About Me", {:action => "aboutme"}) do %>
+                    <div id="current">About Me</div>
+                <% end %> |
+                <%= link_to_unless_current("Resume", {:action => "resume"}) do %>
+                    <div id="current">Resume</div>
+                <% end %> |
+                <%= link_to_unless_current("Contact", {:action => "contact"}) do %>
+                    <div id="current">Contact Me</div>
+                <% end %>
+            </nav>
+        </header>
+
+        <%= yield :content %>  
+
+        <footer>
+
+        </footer>
+
+    </div>
+</body>
+</html>
