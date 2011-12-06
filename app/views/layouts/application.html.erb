@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kyle Swarner Dot Com</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+    <header>
+        <div class="header-wrapper">
+            <div class="pagetitle">
+                <h1>Kyle Swarner Dot Com</h1>
+                <h2>Hi, My name is </h2> 
+                <h2 class="bluetext">Kyle Swarner</h2>
+                <br/><br/>
+                <p>I'm a software developer and website designer</p>
+            </div>
+        </div>
+    </header>
+    
+    <section>
+        <div class="content-wrapper">
+            <nav>
+                <a href="#">About Me</a>
+                <a href="#">Resume</a>
+                <a href="#">Contact Me</a>
+            </nav>
+
+            <div class="panes">
+                <div>
+                    <p>All About Kyle</p>
+                    
+                    <br/><br/>
+                    
+                    <p>More</p>
+                </div>
+                <div>
+                    Put your resume Here!
+                </div>
+                <div>
+                    Contact Info
+                </div>
+            </div>
+            <div class="shadow"/>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-wrapper">
+            <br/>
+            <p>Like this page? Check out the code on my <a href="https://github.com/KyleDSwarner/KyleSwarner.com" class="bluetext">GitHub Profile</a>.</p>
+            <p>&copy; Kyle Swarner 2011</p>
+        </div>
+    </footer>
+    
+    <script>
+        $(function() {
+        $("nav").tabs("div.panes > div");
+        });
+    </script> 
+    
+</body>
+</html>
+
+

@@ -1,0 +1,16 @@
+This is the code for Kyle Swarner Dot Com.
+
+My personal page is partly to build my web presence, but its primary purpose is for it to be a place where I can try new things. Everyone needs a place to try out new coding tools and techniques; this is mine.
+
+The code boils down to some simple HTML pages, so you may be asking yourself a few questions:
+
+1) Why is this a rails app?
+    Unfortunately, I'm one of those people who gets pretty locked down into a single technology at work.
+    The only way for me to truly learn a new language or architecture is to use it in a project. When I got around to building my webpage, I happened to want to learn rails. So, I used it.
+    While I was building the current version of the page (earlier iterations were much more exciting), it became very clear that rails was overkill.
+    I almost swapped off at that point, however I had already decided to use Heroku as my host, which requires the use of rails. It turned out to be a great choice, as Heroku has easily been the best host I've worked with.
+    
+2) As a web designer, isn't it a bit of career suicide to make the source of the webpages you build available online?
+    Yes and no. It's true, someone could theoretically grab a copy of the code and use it as their own. For my personal page, however, who cares?
+    Collaboration is a big part of web design, and many people (including me) get their inspiration from other websites. Why not make it easily available?
+    
