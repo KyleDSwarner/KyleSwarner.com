@@ -1,1 +1,0 @@
-This is the code for the personal website of Kyle Swarner. If you're interested, feel free to poke around, I don't mind!
