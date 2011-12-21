@@ -5,6 +5,11 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  
 </head>
 
 <body>
@@ -25,25 +30,36 @@
             <nav>
                 <a href="#">About Me</a>
                 <a href="#">Resume</a>
-                <a href="#">Contact Me</a>
             </nav>
-
-            <div class="panes">
+            <div class="pane navpanes">
                 <div>
-                    <p>All About Kyle</p>
-                    
-                    <br/><br/>
-                    
-                    <p>More</p>
+                    <h3>All About Kyle</h3>
+                    <p>While the job that pays me is deep-seated in Java, I'm always looking for projects that help me expand my knowledge.</p>
+                    <p>as with any
+                    <p class="quote">"Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live." -Martin Golding</p>
+                    <p>I am my own worst critic. I won't check in code that isn't as simple as possible, clean and readable, and fully tested. That just makes more work for everyone!</p>
                 </div>
                 <div>
-                    Put your resume Here!
-                </div>
-                <div>
-                    Contact Info
+                    <h3>My Resume</h3>
+                    <p>Kyle, you should seriously put your resume here. Dang, son.</p>
                 </div>
             </div>
-            <div class="shadow"/>
+            <div class="pane contact">
+                <div>
+                    <h3>Get in Touch</h3>
+                    <p>Want to get in touch? Use the form below to shoot me an email. If forms scare you, feel free to send an email directly to KyleDSwarner (AT) gmail.com. Thanks!
+                    <%= form_tag({:controller => "navbar", :action => "submitform"}) do %>
+                        <%= label_tag(:name, "Your Name:") %>
+                        <%= text_field(:submitter, :name) %>
+                        <%= label_tag(:email, "Email:") %>
+                        <%= email_field(:submitter, :email) %>
+                        <%= label_tag(:phone, "Phone Number (optional):") %>
+                        <%= telephone_field(:submitter, :phone) %>
+                        <%= label_tag(:message, "Message:") %>
+                        <%= text_area_tag(:message, "You're pretty tits.", :size => "24x6") %>
+                        <%= submit_tag("Send It!") %>
+                    <% end %>
+            </div>
         </div>
     </section>
     
@@ -57,7 +73,18 @@
     
     <script>
         $(function() {
-        $("nav").tabs("div.panes > div");
+        $("nav").tabs("div.navpanes > div");
+        
+        $(".content-wrapper").height(function() {
+            var navheight = $("nav").height();
+            var contentheight = $(".navcontent").height();
+            var contactheight = $(".contact").height();
+            
+            if(contentheight > contactheight) {
+                return navheight + contentheight;
+            }
+            else return navheight + contactheight;
+            });
         });
     </script> 
     

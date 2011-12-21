@@ -13,13 +13,21 @@ body
     color:#66CCFF;
 }
 
+.header,
+.section,
+.footer
+{
+display:block;
+}
+
 .header-wrapper,
 .content-wrapper,
 .footer-wrapper 
 {
     width: 980px;
     text-align: left;
-    margin: 0px auto;
+    margin: 5px auto;
+    height:auto;
 }
 
 /******
@@ -28,11 +36,6 @@ body
 header
 {
     margin:50px auto auto 0px;
-}
-
-.pagetitle
-{
-
 }
 
 h1 {
@@ -60,45 +63,78 @@ h1 {
 /******
 /* Main Content CSS
 /*/
-div.panes {
+.navpanes
+{
+    width:70%;
+    float:left;
+}
+
+.contact
+{
+    width:28%;
+    float:right;
+}
+
+div.pane{
 	background-color:#66CCFF;
 	position: relative;
 	border-radius: 5px; 
 	-moz-border-radius: 5px; 
 	-webkit-border-radius: 5px; 
+    -moz-box-shadow: 5px 5px 5px #888;
+    -webkit-box-shadow: 5px 5px 5px #888;
+    box-shadow: 7px 7px 4px #888;
 }
 
-.panes div {
-	width: 100%;
-	padding: 10px;
+.pane div {
+	padding: 15px;
+    height:auto;
+
+}
+
+.navpanes div h3
+{
+    font-size:22px;
+    font-weight:normal;
+    font-style:italic;
+    margin: 0px 10px 10px 0px;
+    
+}
+
+.navpanes div p
+{
+    font-size:14px;
+    text-indent:50px;
+    margin: 0px 0px 10px 0px;
+}
+
+.navpanes .quote
+{
+    font-style:italic;
+    text-align:center;
+    text-indent:0px;
 }
 
 /******
 /* Navigation CSS
 /*/
 nav {
-margin:0 !important;
-padding:0% 5% 0% 0%;
-height:30px;
+margin: 10px auto 5px auto;
+padding:0% 31% 0% 0%;
 text-align:right;
 }
 
 nav a {
 text-align:right;
-text-indent:0;
 padding:0;
 margin:0 !important;
 font-size:14px;
-height: 30px;
-line-height:30px;
-width: 134px;
 text-align:center;
 text-decoration:none;
 color:#333;
 padding:0px 10px;
 margin:0px;
 position:relative;
-top:1px;
 }
 
 nav a:active {
@@ -122,11 +158,39 @@ border-radius: 5px;
 }
 
 /******
+/* Contact CSS
+/*/
+.contact label
+{
+    font-size:12px;
+    display:block;
+    margin-top:5px;
+}
+
+.contact div h3
+{
+    font-size:22px;
+    font-weight:normal;
+    font-style:italic;
+    margin: 0px 10px 10px 0px;
+    
+}
+
+.contact div p
+{
+    font-size:12px;
+    margin: 0px 0px 10px 0px;
+}
+
+textarea {
+    resize: none;
+} 
+
+/******
 /* Footer CSS
 /*/
 .footer-wrapper
 {
-    background: url("shadowBottom.png") no-repeat scroll 0 0 transparent;
     margin: 0px auto;
 	text-align: center;
 	font-size: 10px;
