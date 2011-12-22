@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js">
 <head>
   <title>Kyle Swarner Dot Com</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-  
+
 </head>
 
 <body>
@@ -27,21 +23,28 @@
     
     <section>
         <div class="content-wrapper">
+            <% if flash[:notice] %>
+                <p class="flash notice"><%= flash[:notice] %></p>
+            <% end %>
+            <% if flash[:error] %>
+                <p class="flash error"><%= flash[:error] %></p>
+            <% end %>
             <nav>
                 <a href="#">About Me</a>
-                <a href="#">Resume</a>
+                <a href="#">Skills</a>
             </nav>
             <div class="pane navpanes">
                 <div>
                     <h3>All About Kyle</h3>
-                    <p>While the job that pays me is deep-seated in Java, I'm always looking for projects that help me expand my knowledge.</p>
-                    <p>as with any
+                    <p>I'm a software developer during the day, and a web designer in my spare time. If you've got a cool idea, let me know! I love to work on new, interesting, and challenging projects, and every line of code I write is written with this quote in mind:</p>
+                    <p></p>
                     <p class="quote">"Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live." -Martin Golding</p>
-                    <p>I am my own worst critic. I won't check in code that isn't as simple as possible, clean and readable, and fully tested. That just makes more work for everyone!</p>
                 </div>
                 <div>
-                    <h3>My Resume</h3>
-                    <p>Kyle, you should seriously put your resume here. Dang, son.</p>
+                    <h3>Skills</h3>
+                    <p>Below is just a snippet of what I love to do. If you want my complete resume, send me an email and I'd love to send it to you!</p>
+                    <p>When it comes to software development, I primarily work with C++, Java, and Ruby, although I know too many other languages to actually list here. In my spare time, I'm also an avid Android developer!</p>
+                    <p>On the web development side, I love writing code from scratch in html, css, and javascript. I have experience in developing front-end websites as well as backend databases, and I know how to make them interact seamlessly.</p>
                 </div>
             </div>
             <div class="pane contact">
@@ -56,9 +59,10 @@
                         <%= label_tag(:phone, "Phone Number (optional):") %>
                         <%= telephone_field(:submitter, :phone) %>
                         <%= label_tag(:message, "Message:") %>
-                        <%= text_area_tag(:message, "You're pretty tits.", :size => "24x6") %>
+                        <%= text_area_tag(:message, "", :size => "24x6") %>
                         <%= submit_tag("Send It!") %>
                     <% end %>
+                    <p class="footer">Page &copy; Kyle Swarner 2011</p>
             </div>
         </div>
     </section>
@@ -73,17 +77,17 @@
     
     <script>
         $(function() {
-        $("nav").tabs("div.navpanes > div");
-        
-        $(".content-wrapper").height(function() {
-            var navheight = $("nav").height();
-            var contentheight = $(".navcontent").height();
-            var contactheight = $(".contact").height();
+            $("nav").tabs("div.navpanes > div");
             
-            if(contentheight > contactheight) {
-                return navheight + contentheight;
-            }
-            else return navheight + contactheight;
+            $(".content-wrapper").height(function() {
+                var navheight = $("nav").height();
+                var contentheight = $(".navcontent").height();
+                var contactheight = $(".contact").height();
+                
+                if(contentheight > contactheight) {
+                    return navheight + contentheight;
+                }
+                else return navheight + contactheight;
             });
         });
     </script> 

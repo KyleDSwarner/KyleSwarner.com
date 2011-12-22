@@ -13,13 +13,6 @@ body
     color:#66CCFF;
 }
 
-.header,
-.section,
-.footer
-{
-display:block;
-}
-
 .header-wrapper,
 .content-wrapper,
 .footer-wrapper 
@@ -63,6 +56,16 @@ h1 {
 /******
 /* Main Content CSS
 /*/
+.no-js .content-wrapper
+{
+    margin-top:20px;
+}
+
+.content-wrapper
+{
+    height:auto;r
+}
+
 .navpanes
 {
     width:70%;
@@ -118,43 +121,48 @@ div.pane{
 /******
 /* Navigation CSS
 /*/
-nav {
-margin: 10px auto 5px auto;
-padding:0% 31% 0% 0%;
-text-align:right;
+.no-js nav
+{
+    display:none;
 }
 
-nav a {
-text-align:right;
-padding:0;
-margin:0 !important;
-font-size:14px;
-text-align:center;
-text-decoration:none;
-color:#333;
-padding:0px 10px;
-margin:0px;
-position:relative;
+.js nav {
+    margin: 10px auto 5px auto;
+    padding:0% 31% 0% 0%;
+    text-align:right;
 }
 
-nav a:active {
-outline:none;
+.js nav a {
+    text-align:right;
+    padding:0;
+    margin:0 !important;
+    font-size:14px;
+    text-align:center;
+    text-decoration:none;
+    color:#333;
+    padding:0px 10px;
+    margin:0px;
+    position:relative;
 }
 
-nav a:hover {
-background-color:#66CCFF;
-border-radius: 5px; 
--moz-border-radius: 5px; 
--webkit-border-radius: 5px; 
+.js nav a:active {
+    outline:none;
+}
+
+.js nav a:hover {
+    background-color:#66CCFF;
+    border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
 }
 
 /* active tab uses a class name "current" */
-nav a.current {
-cursor:default !important;
-background-color:#66CCFF;
-border-radius: 5px; 
--moz-border-radius: 5px; 
--webkit-border-radius: 5px;
+.js nav a.current {
+    cursor:default !important;
+    background-color:#66CCFF;
+    border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px;
 }
 
 /******
@@ -189,8 +197,17 @@ textarea {
 /******
 /* Footer CSS
 /*/
+.no-js .footer-wrapper
+{
+    /* There's a weird issue with no-js due to the tabs plugin I'm using.
+     * I hide this footnote and add a simple one to the contact div instead
+     */
+    display:none;
+}
+
 .footer-wrapper
 {
+    
     margin: 0px auto;
 	text-align: center;
 	font-size: 10px;
@@ -205,4 +222,41 @@ textarea {
 .footer-wrapper a
 {
     text-decoration:none;
+}
+
+/* CSS for the no-js footer */
+.js .contact .footer
+{
+    display:none;
+}
+
+.no-js .contact .footer
+{
+    margin:15px 0px 0px 0px;
+    font-size:10px;
+}
+
+/* CSS for the flash
+ * (Used for email notifications)
+ */
+.flash
+{
+
+	position: relative;
+	border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+    -moz-box-shadow: 5px 5px 5px #888;
+    -webkit-box-shadow: 5px 5px 5px #888;
+    box-shadow: 7px 7px 4px #888;
+    padding:5px;
+    text-align:center;
+}
+.notice
+{
+    background-color:#7FFF65;
+}
+.error
+{
+    background-color:#EB4E00;
 }
